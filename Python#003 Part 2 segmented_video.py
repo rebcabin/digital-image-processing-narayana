@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # read a video file and create a matrix A
-video = cv2.VideoCapture('problem_1_surveillance.mp4')
+video = cv2.VideoCapture('../opencv/samples/data/vtest.avi')  # problem_1_surveillance.mp4')
 
 matrixA = []
 
@@ -24,7 +24,7 @@ b = np.median(matrixA,axis=0) # calculate the median
 b = b.astype(np.uint8) # change the data type
 
 # video segmentation
-video = cv2.VideoCapture('problem_1_surveillance.mp4')
+video = cv2.VideoCapture('../opencv/samples/data/vtest.avi')  # 'problem_1_surveillance.mp4')
 while True:
     ret, image = video.read()  
     if ret == False:           

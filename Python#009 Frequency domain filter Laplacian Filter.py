@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # open and normalized the image
-f = cv2.imread('moon.tif',0)
+f = cv2.imread('../opencv/samples/data/lena.jpg', 0)
 f = f / 255
 
 plt.figure(dpi=150)
@@ -21,12 +21,12 @@ plt.axis('off')
 plt.show()
 
 # Laplacian Filter
-P,Q = F.shape
-H = np.zeros((P,Q), dtype=np.float32)
+P, Q = F.shape
+H = np.zeros((P, Q), dtype=np.float32)
 for u in range(P):
     for v in range(Q):
-        H[u,v] = -4*np.pi*np.pi*((u-P/2)**2 + (v-Q/2)**2)
-        
+        H[u, v] = -4 * np.pi * np.pi * ((u - P / 2) ** 2 + (v - Q / 2) ** 2)
+
 plt.imshow(H, cmap='gray')
 plt.axis('off')
 plt.show()
@@ -48,10 +48,10 @@ plt.show()
 
 # image ehancement
 c = -1
-g = f + c*LapScaled
+g = f + c * LapScaled
 g = np.clip(g, 0, 1)
 
-plt.figure(figsize=(5,7),dpi=150)
+plt.figure(figsize=(5, 7), dpi=150)
 plt.imshow(g, cmap='gray')
 plt.axis('off')
 plt.show()

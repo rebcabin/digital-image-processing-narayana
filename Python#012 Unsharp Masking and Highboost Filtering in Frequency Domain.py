@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # input image f(x,y)
-f = cv2.imread('Lenna.png', 0)
+f = cv2.imread('../opencv/samples/data/lena.jpg', 0)
 
 plt.imshow(f, cmap='gray')
 plt.axis('off')

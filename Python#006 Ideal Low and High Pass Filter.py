@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # original image
-f = cv2.imread('rubik.jpg',0)
+f = cv2.imread('../opencv/samples/data/baboon.jpg',0)
 
 plt.imshow(f, cmap='gray')
 plt.axis('off')

@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # original image
-original_image = cv2.imread('image.png', 0)
+original_image = cv2.imread('../opencv/samples/data/baboon.jpg', 0)
 
 # blur and sharpen convolution kernel
 M = 3

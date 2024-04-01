@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # open the image
-f = cv2.imread('rubik.jpg',0)
+f = cv2.imread('../opencv/samples/data/lena.jpg', 0)
 
 # transform image into freq. domain and shifted
 F = np.fft.fft2(f)
@@ -14,16 +14,16 @@ plt.imshow(np.log1p(np.abs(Fshift)), cmap='gray')
 plt.axis('off')
 plt.show()
 
-# Butterwort Low Pass Filter
-M,N = f.shape
-H = np.zeros((M,N), dtype=np.float32)
-D0 = 10 # cut of frequency
-n = 10 # order 
+# Butterworth Low Pass Filter
+M, N = f.shape
+H = np.zeros((M, N), dtype=np.float32)
+D0 = 10  # cut of frequency
+n = 10  # order
 for u in range(M):
     for v in range(N):
-        D = np.sqrt((u-M/2)**2 + (v-N/2)**2)
-        H[u,v] = 1 / (1 + (D/D0)**n)
-        
+        D = np.sqrt((u - M / 2) ** 2 + (v - N / 2) ** 2)
+        H[u, v] = 1 / (1 + (D / D0) ** n)
+
 plt.imshow(H, cmap='gray')
 plt.axis('off')
 plt.show()
@@ -38,14 +38,14 @@ plt.axis('off')
 plt.show()
 
 # Butterworth High Pass Filter
-HPF = np.zeros((M,N), dtype=np.float32)
+HPF = np.zeros((M, N), dtype=np.float32)
 D0 = 10
 n = 1
 for u in range(M):
     for v in range(N):
-        D = np.sqrt((u-M/2)**2 + (v-N/2)**2)
-        HPF[u,v] = 1 / (1 + (D0/D)**n)
-        
+        D = np.sqrt((u - M / 2) ** 2 + (v - N / 2) ** 2)
+        HPF[u, v] = 1 / (1 + (D0 / D) ** n)
+
 plt.imshow(HPF, cmap='gray')
 plt.axis('off')
 plt.show()

@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 
 # orginal image
-img = cv2.imread('Lenna.png',0)
+img = cv2.imread('../opencv/samples/data/lena.jpg',0)
 img = img/255
 
 cv2.imshow('original image', img)
